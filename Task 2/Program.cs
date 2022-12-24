@@ -28,11 +28,6 @@ for (int i = 0; i < numbers.GetLength(0); i++)
         index++;
     }
 }
-string line = string.Empty;
-for (int j = 0; j < numbers.GetLength(1); j++)
-{
-    line += numbers[index, j] + " ";
-}
 
 Console.WriteLine($"Строка с наименьшей суммой элементов: {index} строка");
 

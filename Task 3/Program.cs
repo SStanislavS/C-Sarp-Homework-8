@@ -18,22 +18,23 @@ FillArrayRandomNumbers(Matrix2);
 Console.WriteLine("Вторая матрица: ");
 PrintArray(Matrix2);
 
-int[,] resultMatrix = new int[row1, column2];
-
+int[,] Matrix3 = new int[row1, column2];
 Console.WriteLine("Произведение первой и второй матрицы: ");
-PrintArray(resultMatrix);
+PrintArray(Matrix3);
 
-for (int i = 0; i < Matrix1.GetLength(0); i++)
 {
-    for (int j = 0; j < Matrix1.GetLength(1); j++)
+    for (int i = 0; i < Matrix1.GetLength(0); i++)
     {
-        for (int k = 0; k < Matrix2.GetLength(1); k++)
+        for (int j = 0; j < Matrix2.GetLength(1); j++)
         {
-            resultMatrix[i, j] += Matrix1[i, k] * Matrix2[k, j];
+            Matrix3 [i, j] = 0;
+            for (int k = 0; k < Matrix2.GetLength(1); k++)
+            {
+                Matrix3 [i, j] += Matrix1[i, k] * Matrix2[k, j];
+            }
         }
     }
 }
-
 
 void FillArrayRandomNumbers(int[,] arr)
 {
